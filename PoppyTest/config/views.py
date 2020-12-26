@@ -69,6 +69,7 @@ def get_distance(coordinate1, coordinate2):
 
 def get_close_users(request):
     address = request.GET.get('address')
+    request.META.get('HTTP_')
     coordinate1 = get_lat_lng(address)
 
     # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
