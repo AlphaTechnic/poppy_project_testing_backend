@@ -25,7 +25,10 @@ SECRET_KEY = '#2ulq9x#t80$te-fw6uf#r7$67o&55f1oxfc=$)7p_q=8pjs2e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-3-35-187-250.ap-northeast-2.compute.amazonaws.com',]
+ALLOWED_HOSTS = [
+    'ec2-3-35-187-250.ap-northeast-2.compute.amazonaws.com',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -80,16 +83,16 @@ WSGI_APPLICATION = 'poppy_backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'poppy-testing-backend',
-        'USER': 'AlphaTechnic',
-        'PASSWORD': 'nea05200',
-        'HOST': 'poppy-testing-backend.cqoxekfskefz.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306',
-    },
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'poppy-testing-backend',
+#         'USER': 'AlphaTechnic',
+#         'PASSWORD': 'nea05200',
+#         'HOST': 'poppy-testing-backend.cqoxekfskefz.ap-northeast-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#     },
+# }
 
 
 # Password validation
