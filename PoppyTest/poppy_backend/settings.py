@@ -25,7 +25,7 @@ SECRET_KEY = '#2ulq9x#t80$te-fw6uf#r7$67o&55f1oxfc=$)7p_q=8pjs2e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['ec2-3-35-187-250.ap-northeast-2.compute.amazonaws.com',]
 
 
 # Application definition
@@ -73,11 +73,22 @@ WSGI_APPLICATION = 'poppy_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'poppy-testing-backend',
+        'USER': 'AlphaTechnic',
+        'PASSWORD': 'nea05200',
+        'HOST': 'poppy-testing-backend.cqoxekfskefz.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
+    },
 }
 
 
