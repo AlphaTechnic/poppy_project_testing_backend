@@ -17,7 +17,7 @@ def get_lat_lng(address):
 
     if r.status_code == 200:
         result_address = r.json()["documents"][0]["address"]
-        result = result_address["x"], result_address["y"]
+        result = float(result_address["x"]), float(result_address["y"])
     else:
         result = "ERROR[" + str(r.status_code) + "]"
 
@@ -63,10 +63,12 @@ def get_address():
 
 def get_distance(coordinate1, coordinate2):
     distance = haversine(coordinate1, coordinate2, unit='km')
+
     return distance
 
 
-def get_close_users(request, address):
+def get_close_users(request):
+    address = request.GET.get('address')
     coordinate1 = get_lat_lng(address)
 
     # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
@@ -101,11 +103,12 @@ def get_close_users(request, address):
             petsitter_info["distance"] = str(round(i[3])) + 'km'
 
         # i[4] : 전문가 여부
-        if i[4] == 1:
+        if i[4].value == 1:
             petsitter_info["expert_or_not"] = "전문펫시터"
         else:
             petsitter_info["expert_or_not"] = "이웃돌보미"
         petsitters.append(petsitter_info)
     info["petsitters"] = petsitters
 
-    return HttpResponse(dumps(info), content_type='application/json')
+    #return HttpResponse(json_context, content_type=, status=status)
+    return HttpResponse(dumps(info, ensure_ascii = False), content_type=u"application/json; charset=utf-8",)
