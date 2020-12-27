@@ -58,7 +58,7 @@ expert1["comment"] = {
 expert1["certification"] = [
     {
         "name": "반려동물관리사 1급",
-        "Acquisition date": "2019. 5. 7"
+        "acquisition_date": "2019. 5. 7"
     }
 ]
 expert1["score"] = {"score": 4.4, "num": 17}
@@ -113,7 +113,7 @@ expert2["comment"] = {
 expert2["certification"] = [
     {
         "name": "반려동물관리사 1급",
-        "Acquisition date": "2016. 9. 27"
+        "acquisition_date": "2016. 9. 27"
     }
 ]
 
@@ -164,11 +164,11 @@ expert3["comment"] = {
 expert3["certification"] = [
     {
         "name": "반려동물관리사 1급",
-        "Acquisition date": "2016. 9. 27"
+        "acquisition_date": "2016. 9. 27"
     },
     {
         "name": "반려동물행동교정사 1급",
-        "Acquisition date": "2010. 11. 30"
+        "acquisition_date": "2010. 11. 30"
     },
 ]
 expert3["score"] = {"score": 4.7, "num": 20}
@@ -218,7 +218,7 @@ expert4["comment"] = {
 expert4["certification"] = [
     {
         "name": "반려동물관리사 1급",
-        "Acquisition date": "2016. 9. 27"
+        "acquisition_date": "2016. 9. 27"
     },
 ]
 expert4["score"] = {"score": 4.8, "num": 13}
@@ -274,11 +274,11 @@ expert5["comment"] = {
 expert5["certification"] = [
     {
         "name": "반려동물관리사 1급",
-        "Acquisition date": "2015. 4. 22"
+        "acquisition_date": "2015. 4. 22"
     },
     {
         "name": "반려동물관리사 1급",
-        "Acquisition date": "2018. 6. 30"
+        "acquisition_date": "2018. 6. 30"
     },
 ]
 expert5["score"] = {"score": 4.5, "num": 16}

@@ -19,5 +19,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('petsitters/', views.get_petsitters, name='close_petsitters'),
+    path('expert/', views.get_experts, name='close_experts'),
+    path('non_expert/', views.get_non_experts, name='close_non_experts'),
+    path('expert/<int:type>/', views.get_expert, name="expert_detail"),
+    path('non_expert/<int:type>', views.get_non_expert, name='non_expert_detail'),
+
 ]
