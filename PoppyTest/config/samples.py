@@ -1,4 +1,6 @@
 expert1 = dict()
+expert1["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                      "/room_expert1.png?raw=true "
 expert1["name"] = "김명순"
 expert1["small_dog_cost"] = [40000, 45000]
 expert1["middle_dog_cost"] = [45000, 50000]
@@ -25,9 +27,24 @@ expert1["content"] = """
 밑고 맡기신다면 아이들이랑 좋은 추억을 만들겠습니다.
 """
 
+expert1_poppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img/dog_expert1" \
+                 ".png?raw=true "
+expert1_poppy2 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img/dog_expert1" \
+                 "%20(2).png?raw=true "
 expert1["puppy"] = [
-    {"name": "또리", "breed": "말티즈", "age": "7살", "character": "정말 온순해요:)"},
-    {"name": "뽀리", "breed": "말티즈", "age": "7살", "character": "활발하고 강아지들과 잘 어울려요"}
+    {
+        "img": expert1_poppy1,
+        "name": "또리", "breed":
+        "말티즈", "age": "7살",
+        "character": "정말 온순해요:)"
+    },
+    {
+        "img": expert1_poppy2,
+        "name": "뽀리",
+        "breed": "말티즈",
+        "age": "7살",
+        "character": "활발하고 강아지들과 잘 어울려요"
+    }
 ]
 expert1["comment"] = {
     "name": "김*연",
@@ -48,6 +65,8 @@ expert1["score"] = {"score": 4.4, "num": 17}
 
 
 expert2 = dict()
+expert2["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                      "/room_expert2.png?raw=true "
 expert2["name"] = "강하니"
 expert2["small_dog_cost"] = [40000, 50000]
 expert2["middle_dog_cost"] = [45000, 50000]
@@ -73,8 +92,16 @@ expert2["content"] = """
 저희 집에 많이 많이 놀러오세요~~~♡
 """
 
+expert2_poppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img/dog_expert2" \
+                 ".png?raw=true "
 expert2["puppy"] = [
-    {"name": "비즈", "breed": "푸들", "age": "5살", "character": "정말 온순해요:)"},
+    {
+        "img": expert2_poppy1,
+        "name": "비즈",
+        "breed": "푸들",
+        "age": "5살",
+        "character": "정말 온순해요:)"
+    },
 ]
 expert2["comment"] = {
     "name": "이*라",
@@ -94,6 +121,8 @@ expert2["score"] = {"score": 4.6, "num": 11}\
 
 
 expert3 = dict()
+expert3["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                      "/room_expert3.png?raw=true "
 expert3["name"] = "고아름"
 expert3["small_dog_cost"] = [40000, 45000]
 expert3["middle_dog_cost"] = [45000, 50000]
@@ -113,8 +142,16 @@ expert3["content"] = """
 내 아이처럼, 누구보다 따뜻하고 소중하게 보살펴드리겠습니다.  
 """
 
+expert3_poppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img/dog_expert3" \
+                 ".png?raw=true "
 expert3["puppy"] = [
-    {"name": "구름", "breed": "닥스훈트", "age": "12살", "character": "나이 때문인지 느긋하고 온순해요~ 다른 강아지들과 잘 어울려요ㅎㅎ"},
+    {
+        "img": expert3_poppy1,
+        "name": "구름",
+        "breed": "닥스훈트",
+        "age": "12살",
+        "character": "나이 때문인지 느긋하고 온순해요~ 다른 강아지들과 잘 어울려요ㅎㅎ"
+    },
 ]
 expert3["comment"] = {
     "name": "홍*현",
@@ -138,6 +175,8 @@ expert3["score"] = {"score": 4.7, "num": 20}
 
 
 expert4 = dict()
+expert4["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                      "/room_expert4.png?raw=true "
 expert4["name"] = "이순정"
 expert4["small_dog_cost"] = [30000, 40000]
 expert4["middle_dog_cost"] = [45000, 50000]
@@ -158,8 +197,16 @@ expert4["content"] = """
 예쁘고 소중하게 잘 보살피고 있을게요!
 """
 
+expert4_poppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img/dog_expert4" \
+                 ".png?raw=true "
 expert4["puppy"] = [
-    {"name": "비즈", "breed": "포메라니안", "age": "3살", "character": "호기심이 많고 상아지들을 좋아해요~"},
+    {
+        "img": expert4_poppy1,
+        "name": "비즈",
+        "breed": "포메라니안",
+        "age": "3살",
+        "character": "호기심이 많고 상아지들을 좋아해요~"
+    },
 ]
 expert4["comment"] = {
     "name": "박*영",
@@ -178,6 +225,8 @@ expert4["score"] = {"score": 4.8, "num": 13}
 
 
 expert5 = dict()
+expert5["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                      "/room_expert5.png?raw=true "
 expert5["name"] = "이현숙"
 expert5["small_dog_cost"] = [30000, 35000]
 expert5["middle_dog_cost"] = [35000, 40000]
@@ -203,8 +252,16 @@ expert5["content"] = """
 감사합니다^^
 """
 
+expert5_poppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img/dog_expert5" \
+                 ".png?raw=true "
 expert5["puppy"] = [
-    {"name": "공주", "breed": "치와와", "age": "5살", "character": "수줍음을 많이 타요^^ 훈련이 아주 잘 되어있어서 먼저 공격하지 않아요"},
+    {
+        "img": expert5_poppy1,
+        "name": "공주",
+        "breed": "치와와",
+        "age": "5살",
+        "character": "수줍음을 많이 타요^^ 훈련이 아주 잘 되어있어서 먼저 공격하지 않아요"
+    },
 ]
 expert5["comment"] = {
     "name": "이*선",
@@ -229,14 +286,15 @@ expert5["score"] = {"score": 4.5, "num": 16}
 
 
 #############################
-
-neighbor1 = dict()
-neighbor1["name"] = "김다영"
-neighbor1["small_dog_cost"] = [20000, 30000]
-neighbor1["middle_dog_cost"] = [25000, 35000]
-neighbor1["large_dog_cost"] = [30000, 40000]
-neighbor1['title'] = "이웃집 뚱이네"
-neighbor1["content"] = """
+non_expert1 = dict()
+non_expert1["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                        "/room_neighbor1.png?raw=true "
+non_expert1["name"] = "김다영"
+non_expert1["small_dog_cost"] = [20000, 30000]
+non_expert1["middle_dog_cost"] = [25000, 35000]
+non_expert1["large_dog_cost"] = [30000, 40000]
+non_expert1['title'] = "이웃집 뚱이네"
+non_expert1["content"] = """
 안녕하세요! 이웃펫시터 활동을 하고 있는 김다영이라고 합니다 ㅎㅎ
 작년 저의 가족 토토가 무지개 다리를 건넌 후 지금은 두 번째 반려견과 함께하고 있습니다.
 지난 13년간 쌓은 경험과 노하우로 아이들을 정성껏 돌볼 수 있어요! 
@@ -250,26 +308,36 @@ neighbor1["content"] = """
 연락주세요 :>
 """
 
-neighbor1["puppy"] = [
-    {"name": "뚱이", "breed": "치와와", "age": "1살", "character": "개구쟁이에요~ 애교가 정말 많아요"},
+non_expert1_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                   "/dog_neighbor1.png?raw=true "
+non_expert1["puppy"] = [
+    {
+        "img": non_expert1_puppy1,
+        "name": "뚱이",
+        "breed": "치와와",
+        "age": "1살",
+        "character": "개구쟁이에요~ 애교가 정말 많아요"
+    },
 ]
-neighbor1["comment"] = {
+non_expert1["comment"] = {
     "name": "지*솔",
     "content":
         """집이랑 구조도 같고 가까운 이웃집에 제리를 맡길 수 있어서 낯선 환경에 적응하지 못하는 우리 아이에 대한 걱정을 조금 덜 수 있었어요! 요즘 제리가 사료를 너무 안 먹어서 고민이었는데, 
         얼마나 먹었는지도 세세하게 체크해주셔서 감동받았어요.제리가 좋은 친구 사귄 것 같아서 행복해요~^^""",
     "date": "2020-11-28"
 }
-neighbor1["score"] = {"score": 4.6, "num": 15}
+non_expert1["score"] = {"score": 4.6, "num": 15}
 
 
-neighbor2 = dict()
-neighbor2["name"] = "이나은"
-neighbor2["small_dog_cost"] = [20000, 25000]
-neighbor2["middle_dog_cost"] = [25000, 30000]
-neighbor2["large_dog_cost"] = [30000, 35000]
-neighbor2['title'] = "안심하고 맡겨주세요!"
-neighbor2["content"] = """
+non_expert2 = dict()
+non_expert2["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                        "/room_neighbor2.png?raw=true "
+non_expert2["name"] = "이나은"
+non_expert2["small_dog_cost"] = [20000, 25000]
+non_expert2["middle_dog_cost"] = [25000, 30000]
+non_expert2["large_dog_cost"] = [30000, 35000]
+non_expert2['title'] = "안심하고 맡겨주세요!"
+non_expert2["content"] = """
 안녕하세요 푸들을 기르고 있는 이나은이라고 합니다.
 저는 지금 주하라는 강아지를 2년 넘게 키워왔고, 친구들 반려견을 여러번 보살펴준 경험이 있어요!
 
@@ -280,25 +348,36 @@ neighbor2["content"] = """
 문의 사항 있으시면 010-3920-2877로 문자 남겨주시면 바로 답장해드릴게요!
 """
 
-neighbor2["puppy"] = [
-    {"name": "주하", "breed": "푸들", "age": "2살", "character": "온순한 주하에요"},
+non_expert2_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                   "/dog_neighbor2.png?raw=true "
+non_expert2["puppy"] = [
+    {
+        "img": non_expert2_puppy1,
+        "name": "주하",
+        "breed": "푸들",
+        "age": "2살",
+        "character": "온순한 주하에요"
+    },
 ]
-neighbor2["comment"] = {
+non_expert2["comment"] = {
     "name": "이*주",
     "content":
         """나은님 너무 감사합니다^^ 강이가 적응을 잘 못하는 편이어서 맡기기 전에 걱정이 많았는데 걱정과 달리 금방 적응했네요ㅎㅎ 스트레스도 안받고 잘 놀고 잘 싸고 잘 자고 온게 눈에 잘 
         보여요~^^  중간중간 일지도 써주시고 사진, 동영상도 올려주셔서 맘편히 여행했어요.  호텔링했으면 후회할 뻔했어요ㅜㅜ """,
     "date": "2020-12-01"
 }
-neighbor2["score"] = {"score": 4.6, "num": 19}
+non_expert2["score"] = {"score": 4.6, "num": 19}
 
-neighbor3 = dict()
-neighbor3["name"] = "김지훈"
-neighbor3["small_dog_cost"] = [15000, 20000]
-neighbor3["middle_dog_cost"] = [20000, 25000]
-neighbor3["large_dog_cost"] = [25000, 30000]
-neighbor3['title'] = "행복하고 즐거운 집"
-neighbor3["content"] = """
+
+non_expert3 = dict()
+non_expert3["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                        "/room_neighbor3.png?raw=true "
+non_expert3["name"] = "김지훈"
+non_expert3["small_dog_cost"] = [15000, 20000]
+non_expert3["middle_dog_cost"] = [20000, 25000]
+non_expert3["large_dog_cost"] = [25000, 30000]
+non_expert3['title'] = "행복하고 즐거운 집"
+non_expert3["content"] = """
 안녕하세요.  저는 26살 김지훈이라고 합니다. 현재 대학교 4학년이고, 
 말랑이와 쫀득이라는 포메라니언 두친구, 그리고 엄마 아빠 누나 2명과 함께 살고 있어요 !
 저희 집은 가족이 많아 말랑,쫀득이를 돌봐줄 사람이 많지만, 저희 식구와 달리 일상이 바빠 반려견과 충분히 시간을 보내지 못하는 이웃 분들께  
@@ -313,27 +392,45 @@ neighbor3["content"] = """
 감사합니다!
 """
 
-neighbor3["puppy"] = [
-    {"name": "말랑", "breed": "포메라니안", "age": "5살", "character": "의젓하고 온순해요."},
-    {"name": "쫀득", "breed": "포메라니안", "age": "4살", "character": "친화력이 좋고 장난기가 많아요"},
+non_expert3_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                   "/dog_neighbor3.png?raw=true "
+non_expert3_puppy2 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                   "/dog_neighbor3%20(2).png?raw=true "
+non_expert3["puppy"] = [
+    {
+        "img": non_expert3_puppy1,
+        "name": "말랑",
+        "breed": "포메라니안",
+        "age": "5살",
+        "character": "의젓하고 온순해요."
+    },
+    {
+        "img": non_expert3_puppy2,
+        "name": "쫀득",
+        "breed": "포메라니안",
+        "age": "4살",
+        "character": "친화력이 좋고 장난기가 많아요"
+    },
 ]
-neighbor3["comment"] = {
+non_expert3["comment"] = {
     "name": "장*나",
     "content":
         """급하게 친정에 가봐야해서 가까운 이웃집에 맡겼는데 쫑이와 비슷한 친구들과 함께 신나게 놀고 있는 모습에 너무 안심이 되었네요^^ 여러 마리를 키우셔서 그런지 관리도 잘 해주시고 사랑 듬뿍 
         주시는 모습에 감동 받았답니다~^^""",
     "date": "2020-12-20"
 }
-neighbor3["score"] = {"score": 4.8, "num": 11}
+non_expert3["score"] = {"score": 4.8, "num": 11}
 
 
-neighbor4 = dict()
-neighbor4["name"] = "신나미"
-neighbor4["small_dog_cost"] = [10000, 20000]
-neighbor4["middle_dog_cost"] = [15000, 25000]
-neighbor4["large_dog_cost"] = [20000, 30000]
-neighbor4['title'] = "쿠키 집으로 초대합니다"
-neighbor4["content"] = """
+non_expert4 = dict()
+non_expert4["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                        "/room_neighbor4.png?raw=true "
+non_expert4["name"] = "신나미"
+non_expert4["small_dog_cost"] = [10000, 20000]
+non_expert4["middle_dog_cost"] = [15000, 25000]
+non_expert4["large_dog_cost"] = [20000, 30000]
+non_expert4['title'] = "쿠키 집으로 초대합니다"
+non_expert4["content"] = """
 안녕하세요, 6살 배기 말티즈 쿠키 엄마 신나미 입니다. 
 
 지금은 쿠키만 키우고 있지만, 친정에서 대형견 두마리를 더 키우고 있어
@@ -348,26 +445,36 @@ neighbor4["content"] = """
 믿고 맡겨 주세요 ^^
 """
 
-neighbor4["puppy"] = [
-    {"name": "쿠키", "breed": "말티즈", "age": "6살", "character": "다른 강아지에 크게 관심이 없어요."},
+non_expert4_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                   "/dog_neighbor4.png?raw=true "
+non_expert4["puppy"] = [
+    {
+        "img": non_expert4_puppy1,
+        "name": "쿠키",
+        "breed": "말티즈",
+        "age": "6살",
+        "character": "다른 강아지에 크게 관심이 없어요."
+    },
 ]
-neighbor4["comment"] = {
+non_expert4["comment"] = {
     "name": "이*정",
     "content":
         """안심하고 다녀올 수 있도록 자주 사진, 동영상 보내주셔서 감사했어요ㅜㅜ 가족분들 모두 따뜻하셔서 우리 보름이가 큰 사랑 받고 온 것 같네요! 놀이도 하고, 산책도 하고 맛있는 것도 먹고... 
         우리 아이가 말괄량이라 많이 말썽부렸을 것 같은데 이해해주시고 잘 보듬어주셔서 감사합니다~!""",
     "date": "2020-12-08"
 }
-neighbor4["score"] = {"score": 4.7, "num": 21}
+non_expert4["score"] = {"score": 4.7, "num": 21}
 
 
-neighbor5 = dict()
-neighbor5["name"] = "한서진"
-neighbor5["small_dog_cost"] = [10000, 15000]
-neighbor5["middle_dog_cost"] = [15000, 20000]
-neighbor5["large_dog_cost"] = [20000, 25000]
-neighbor5['title'] = "가족처럼 사랑으로 돌봅니다!"
-neighbor5["content"] = """
+non_expert5 = dict()
+non_expert5["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                       "/room_neighbor5.png?raw=true "
+non_expert5["name"] = "한서진"
+non_expert5["small_dog_cost"] = [10000, 15000]
+non_expert5["middle_dog_cost"] = [15000, 20000]
+non_expert5["large_dog_cost"] = [20000, 25000]
+non_expert5['title'] = "가족처럼 사랑으로 돌봅니다!"
+non_expert5["content"] = """
 안녕하세요? 저는 강아지를 정말 너무나도 사랑하는 당신의 이웃입니다. 
 저희집에는 사모예드 왕자가 있는데요, 인근 반려견 놀이터에 가서 다른 집 강아지들을 봐도 너무 예쁘고 귀엽더라구요..
 매번 저희 집 왕자와도 잘 지내고 서로 친구를 만나 신나하는 모습이 너무 보기 좋았어요 ㅎㅎ
@@ -381,20 +488,28 @@ neighbor5["content"] = """
 걱정은 내려놓으시고 편하게 연락주세요 ~ ㅎㅎ
 """
 
-neighbor5["puppy"] = [
-    {"name": "왕자", "breed": "사모예드", "age": "4살", "character": "아주 예의바르고 순해요. 친화력도 좋아서 어떤 강아지와도 잘 지내는 편입니다."},
+non_expert5_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                   "/dog_expert5.png?raw=true "
+non_expert5["puppy"] = [
+    {
+        "img": non_expert5_puppy1,
+        "name": "왕자",
+        "breed": "사모예드",
+        "age": "4살",
+        "character": "아주 예의바르고 순해요. 친화력도 좋아서 어떤 강아지와도 잘 지내는 편입니다."
+    },
 ]
-neighbor5["comment"] = {
+non_expert5["comment"] = {
     "name": "유*아",
     "content":
         """우리 초코 잘 돌봐주셔서 감사드립니다. 초코가 매우 소심한데 이모님이 따뜻하게 대해주셔서 금방 마음을 열고 잘 지내다 온 것 같아요^^ 공주도 너무 귀엽고 앞으로도 초코랑 잘 지냈으면 
         좋겠어요!ㅎㅎ 사진과 동영상 모두 감사드립니다.다시 연락드릴 의사 100% 입니다~~!""",
     "date": "2020-11-21"
 }
-neighbor5["score"] = {"score": 4.6, "num": 11}
+non_expert5["score"] = {"score": 4.6, "num": 11}
 
-expert = ['_', expert1, expert2, expert3, expert4, expert5]
-neighbor = ['_', neighbor1, neighbor2, neighbor3, neighbor4, neighbor5]
+expert = [expert1, expert2, expert3, expert4, expert5]
+non_expert = [non_expert1, non_expert2, non_expert3, non_expert4, non_expert5]
 
 
 
