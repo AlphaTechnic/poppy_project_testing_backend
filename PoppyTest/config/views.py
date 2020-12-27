@@ -186,7 +186,7 @@ def get_non_experts(request):
     for i, petsitter in enumerate(non_nearest5_experts):
         petsitter_info = dict()
         # petsitter[4] : 전문가 여부
-        petsitter_info["expert_or_not"] = 1
+        petsitter_info["expert_or_not"] = 0
 
         # petsitter[2] : 주소
         petsitter_info["address"] = petsitter[2]
