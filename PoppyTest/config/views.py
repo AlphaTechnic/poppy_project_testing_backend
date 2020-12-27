@@ -236,6 +236,8 @@ def get_expert(request, type):
     petsitter_info["title"] = samples.expert[type]["title"]
     # content
     petsitter_info["content"] = samples.expert[type]["content"]
+    # 강아지 정보
+    petsitter_info["puppy"] = samples.expert[type]["puppy"]
     # 댓글
     petsitter_info["comment"] = samples.expert[type]["comment"]
     # 자격증
@@ -260,6 +262,8 @@ def get_non_expert(request, type):
     petsitter_info["title"] = samples.non_expert[type]["title"]
     # content
     petsitter_info["content"] = samples.non_expert[type]["content"]
+    # 강아지 정보
+    petsitter_info["puppy"] = samples.expert[type]["puppy"]
     # 댓글
     petsitter_info["comment"] = samples.non_expert[type]["comment"]
     # 평점
