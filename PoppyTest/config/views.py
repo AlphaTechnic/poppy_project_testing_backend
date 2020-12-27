@@ -4,6 +4,7 @@ import numpy as np
 from json import dumps
 from haversine import haversine
 from django.shortcuts import HttpResponse
+from . import samples
 
 
 def get_lat_lng(address):
@@ -69,7 +70,6 @@ def get_distance(coordinate1, coordinate2):
 
 def get_close_users(request):
     address = request.GET.get('address')
-    request.META.get('HTTP_')
     coordinate1 = get_lat_lng(address)
 
     # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
@@ -97,19 +97,18 @@ def get_close_users(request):
 
         # i[3] : 떨어진 거리
         if i[3] < 1:
-            petsitter_info["distance"] = str(round(i[3]*1000)) + ' m'
-        elif 1<= i[3] < 10:
+            petsitter_info["distance"] = str(round(i[3]*1000)) + 'm'
+        elif 1 <= i[3] < 10:
             petsitter_info["distance"] = str(round(i[3], 1)) + 'km'
         else:
             petsitter_info["distance"] = str(round(i[3])) + 'km'
 
         # i[4] : 전문가 여부
         if i[4].value == 1:
-            petsitter_info["expert_or_not"] = "전문펫시터"
+            petsitter_info["expert_or_not"] = 1
         else:
-            petsitter_info["expert_or_not"] = "이웃돌보미"
+            petsitter_info["expert_or_not"] = 0
         petsitters.append(petsitter_info)
     info["petsitters"] = petsitters
 
-    #return HttpResponse(json_context, content_type=, status=status)
-    return HttpResponse(dumps(info, ensure_ascii = False), content_type=u"application/json; charset=utf-8",)
+    return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8",)

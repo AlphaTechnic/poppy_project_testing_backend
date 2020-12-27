@@ -44,7 +44,6 @@ expert1["certification"] = [
         "Acquisition date": "2019. 5. 7"
     }
 ]
-
 expert1["score"] = {"score": 4.4, "num": 17}
 
 
@@ -394,8 +393,8 @@ neighbor5["comment"] = {
 }
 neighbor5["score"] = {"score": 4.6, "num": 11}
 
-
-
+expert = ['_', expert1, expert2, expert3, expert4, expert5]
+neighbor = ['_', neighbor1, neighbor2, neighbor3, neighbor4, neighbor5]
 
 
 
