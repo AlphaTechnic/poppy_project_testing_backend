@@ -89,250 +89,139 @@ def get_distance(coordinate1, coordinate2):
 
 def get_experts(request):
     order_by = request.GET.get('order_by')
-    if order_by == "distance":
-        address = request.GET.get('address')
-        coordinate1 = get_lat_lng(address)
 
-        # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
-        load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
-        load_ws = load_wb['Sheet']
+    address = request.GET.get('address')
+    coordinate1 = get_lat_lng(address)
 
-        expert_list = []
-        for row in load_ws.rows:
-            x2 = row[0].value
-            y2 = row[1].value
-            address = row[2].value
-            expert_or_not = row[3].value
+    # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
+    load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
+    load_ws = load_wb['Sheet']
 
-            coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
-            new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
-            if expert_or_not == 1:
-                expert_list.append(new_querySet)
-                nearest5_experts = sorted(expert_list, key=lambda x: x[3])[:5]
-            else:
-                continue
+    expert_list = []
+    for row in load_ws.rows:
+        x2 = row[0].value
+        y2 = row[1].value
+        address = row[2].value
+        expert_or_not = row[3].value
 
-        info = dict()
-        petsitters = []
-        type = round(nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터의 거리로 생성한 random number
+        coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
+        new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
+        if expert_or_not == 1:
+            expert_list.append(new_querySet)
+            nearest5_experts = sorted(expert_list, key=lambda x: x[3])[:5]
+        else:
+            continue
 
-        for i, petsitter in enumerate(nearest5_experts):
-            print(i)
-            petsitter_info = dict()
-            # petsitter[4] : 전문가 여부
-            petsitter_info["expert_or_not"] = 1
+    info = dict()
+    petsitters = []
+    type = round(nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터의 거리로 생성한 random number
 
-            # petsitter[2] : 주소
-            petsitter_info["address"] = petsitter[2]
+    for i, petsitter in enumerate(nearest5_experts):
+        print(i)
+        petsitter_info = dict()
+        # petsitter[4] : 전문가 여부
+        petsitter_info["expert_or_not"] = 1
 
-            # petsitter[3] : 떨어진 거리
-            if petsitter[3] < 1:
-                petsitter_info["distance"] = str(round(petsitter[3] * 1000)) + 'm'
-            elif 1 <= petsitter[3] < 10:
-                petsitter_info["distance"] = str(round(petsitter[3], 1)) + 'km'
-            else:
-                petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
+        # petsitter[2] : 주소
+        petsitter_info["address"] = petsitter[2]
 
-            # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
-            type = (type + 1) % 5
-            petsitter_info["type"] = type
+        # petsitter[3] : 떨어진 거리
+        if petsitter[3] < 1:
+            petsitter_info["distance"] = str(round(petsitter[3] * 1000)) + 'm'
+        elif 1 <= petsitter[3] < 10:
+            petsitter_info["distance"] = str(round(petsitter[3], 1)) + 'km'
+        else:
+            petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
 
-            # title
-            petsitter_info["title"] = samples.expert[type]["title"]
-            # 방 사진
-            petsitter_info["room_img"] = samples.expert[type]["room_img"]
-            # 평점
-            petsitter_info["score"] = samples.expert[type]["score"]
-            # 가격
-            petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
-            petsitters.append(petsitter_info)
-        info["experts"] = petsitters
-        return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
+        # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
+        type = (type + 1) % 5
+        petsitter_info["type"] = type
 
-    elif order_by == "price":
-        address = request.GET.get('address')
-        coordinate1 = get_lat_lng(address)
+        # title
+        petsitter_info["title"] = samples.expert[type]["title"]
+        # 방 사진
+        petsitter_info["room_img"] = samples.expert[type]["room_img"]
+        # 평점
+        petsitter_info["score"] = samples.expert[type]["score"]
+        # 가격
+        petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
+        petsitters.append(petsitter_info)
 
-        # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
-        load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
-        load_ws = load_wb['Sheet']
-
-        expert_list = []
-        for row in load_ws.rows:
-            x2 = row[0].value
-            y2 = row[1].value
-            address = row[2].value
-            expert_or_not = row[3].value
-
-            coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
-            new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
-            if expert_or_not == -1:
-                expert_list.append(new_querySet)
-                nearest5_experts = sorted(expert_list, key=lambda x: x[3])[:5]
-            else:
-                continue
-
-        info = dict()
-        petsitters = []
-        type = round(nearest5_experts[0][3] * 1000) % 5  # 첫번째 펫시터의 거리로 생성한 random number
-
-        for i, petsitter in enumerate(nearest5_experts):
-            petsitter_info = dict()
-            # petsitter[4] : 전문가 여부
-            petsitter_info["expert_or_not"] = 1
-
-            # petsitter[2] : 주소
-            petsitter_info["address"] = petsitter[2]
-
-            # petsitter[3] : 떨어진 거리
-            if petsitter[3] < 1:
-                petsitter_info["distance"] = str(round(petsitter[3] * 1000)) + 'm'
-            elif 1 <= petsitter[3] < 10:
-                petsitter_info["distance"] = str(round(petsitter[3], 1)) + 'km'
-            else:
-                petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
-
-            # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
-            type = (type + 1) % 5
-            petsitter_info["type"] = type
-
-            # title
-            petsitter_info["title"] = samples.expert[type]["title"]
-            # 방 사진
-            petsitter_info["room_img"] = samples.expert[type]["room_img"]
-            # 평점
-            petsitter_info["score"] = samples.expert[type]["score"]
-            # 가격
-            petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
-            petsitters.append(petsitter_info)
-
+    if order_by == 'price':
         sorted_petsitters = sorted(petsitters, key=lambda x: (x["small_dog_cost"][0], distance_to_int(x["distance"])))
-
-        info["non_experts"] = sorted_petsitters
+        info["experts"] = sorted_petsitters
         return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
+
+    info["experts"] = petsitters
+    return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
+
 
 def get_non_experts(request):
     order_by = request.GET.get('order_by')
-    if order_by == "distance":
-        address = request.GET.get('address')
-        coordinate1 = get_lat_lng(address)
+    address = request.GET.get('address')
+    coordinate1 = get_lat_lng(address)
 
-        # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
-        load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
-        load_ws = load_wb['Sheet']
+    # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
+    load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
+    load_ws = load_wb['Sheet']
 
-        non_expert_list = []
-        for row in load_ws.rows:
-            x2 = row[0].value
-            y2 = row[1].value
-            address = row[2].value
-            expert_or_not = row[3].value
+    non_expert_list = []
+    for row in load_ws.rows:
+        x2 = row[0].value
+        y2 = row[1].value
+        address = row[2].value
+        expert_or_not = row[3].value
 
-            coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
-            new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
-            if expert_or_not == -1:
-                non_expert_list.append(new_querySet)
-                non_nearest5_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
-            else:
-                continue
+        coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
+        new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
+        if expert_or_not == -1:
+            non_expert_list.append(new_querySet)
+            non_nearest5_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
+        else:
+            continue
 
-        info = dict()
-        petsitters = []
-        type = round(non_nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터의 거리로 생성한 random number
+    info = dict()
+    petsitters = []
+    type = round(non_nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터의 거리로 생성한 random number
 
-        for i, petsitter in enumerate(non_nearest5_experts):
-            petsitter_info = dict()
-            # petsitter[4] : 전문가 여부
-            petsitter_info["expert_or_not"] = 1
+    for i, petsitter in enumerate(non_nearest5_experts):
+        petsitter_info = dict()
+        # petsitter[4] : 전문가 여부
+        petsitter_info["expert_or_not"] = 1
 
-            # petsitter[2] : 주소
-            petsitter_info["address"] = petsitter[2]
+        # petsitter[2] : 주소
+        petsitter_info["address"] = petsitter[2]
 
-            # petsitter[3] : 떨어진 거리
-            if petsitter[3] < 1:
-                petsitter_info["distance"] = str(round(petsitter[3] * 1000)) + 'm'
-            elif 1 <= petsitter[3] < 10:
-                petsitter_info["distance"] = str(round(petsitter[3], 1)) + 'km'
-            else:
-                petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
+        # petsitter[3] : 떨어진 거리
+        if petsitter[3] < 1:
+            petsitter_info["distance"] = str(round(petsitter[3] * 1000)) + 'm'
+        elif 1 <= petsitter[3] < 10:
+            petsitter_info["distance"] = str(round(petsitter[3], 1)) + 'km'
+        else:
+            petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
 
-            # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
-            type = (type + 1) % 5
-            petsitter_info["type"] = type
+        # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
+        type = (type + 1) % 5
+        petsitter_info["type"] = type
 
-            # title
-            petsitter_info["title"] = samples.expert[type]["title"]
-            # 방 사진
-            petsitter_info["room_img"] = samples.expert[type]["room_img"]
-            # 평점
-            petsitter_info["score"] = samples.expert[type]["score"]
-            # 가격
-            petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
-            petsitters.append(petsitter_info)
-        info["non_experts"] = petsitters
-        return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
+        # title
+        petsitter_info["title"] = samples.expert[type]["title"]
+        # 방 사진
+        petsitter_info["room_img"] = samples.expert[type]["room_img"]
+        # 평점
+        petsitter_info["score"] = samples.expert[type]["score"]
+        # 가격
+        petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
+        petsitters.append(petsitter_info)
 
-    elif order_by == "price":
-        address = request.GET.get('address')
-        coordinate1 = get_lat_lng(address)
-
-        # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
-        load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
-        load_ws = load_wb['Sheet']
-
-        non_expert_list = []
-        for row in load_ws.rows:
-            x2 = row[0].value
-            y2 = row[1].value
-            address = row[2].value
-            expert_or_not = row[3].value
-
-            coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
-            new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
-            if expert_or_not == -1:
-                non_expert_list.append(new_querySet)
-                non_nearest5_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
-            else:
-                continue
-
-        info = dict()
-        petsitters = []
-        type = round(non_nearest5_experts[0][3] * 1000) % 5  # 첫번째 펫시터의 거리로 생성한 random number
-
-        for i, petsitter in enumerate(non_nearest5_experts):
-            petsitter_info = dict()
-            # petsitter[4] : 전문가 여부
-            petsitter_info["expert_or_not"] = 1
-
-            # petsitter[2] : 주소
-            petsitter_info["address"] = petsitter[2]
-
-            # petsitter[3] : 떨어진 거리
-            if petsitter[3] < 1:
-                petsitter_info["distance"] = str(round(petsitter[3] * 1000)) + 'm'
-            elif 1 <= petsitter[3] < 10:
-                petsitter_info["distance"] = str(round(petsitter[3], 1)) + 'km'
-            else:
-                petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
-
-            # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
-            type = (type + 1) % 5
-            petsitter_info["type"] = type
-
-            # title
-            petsitter_info["title"] = samples.non_expert[type]["title"]
-            # 방 사진
-            petsitter_info["room_img"] = samples.non_expert[type]["room_img"]
-            # 평점
-            petsitter_info["score"] = samples.non_expert[type]["score"]
-            # 가격
-            petsitter_info["small_dog_cost"] = samples.non_expert[type]["small_dog_cost"]
-            petsitters.append(petsitter_info)
-
+    if order_by == 'price':
         sorted_petsitters = sorted(petsitters, key=lambda x: (x["small_dog_cost"][0], distance_to_int(x["distance"])))
-
         info["non_experts"] = sorted_petsitters
         return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
+
+    info["non_experts"] = petsitters
+    return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
+
 
 def get_expert(request, type):
     petsitter_info = dict()
