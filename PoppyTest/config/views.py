@@ -143,7 +143,7 @@ def get_experts(request):
         # 평점
         petsitter_info["score"] = samples.expert[type]["score"]
         # 가격
-        petsitter_info["small_dog_cost"] = [samples.expert[type]["small_dog_cost"][0][:-1], samples.expert[type]["small_dog_cost"][1][:-1]]
+        petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
         petsitters.append(petsitter_info)
 
     if order_by == 'price':
@@ -210,7 +210,7 @@ def get_non_experts(request):
         # 평점
         petsitter_info["score"] = samples.non_expert[type]["score"]
         # 가격
-        petsitter_info["small_dog_cost"] = [samples.non_expert[type]["small_dog_cost"][0][:-1], samples.non_expert[type]["small_dog_cost"][1][:-1]]
+        petsitter_info["small_dog_cost"] = samples.non_expert[type]["small_dog_cost"]
         petsitters.append(petsitter_info)
 
     if order_by == 'price':
