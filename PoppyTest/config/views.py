@@ -8,8 +8,8 @@ from . import samples
 
 
 def price_to_int(price):
-    # '30,000원' -> 30000
-    return int(price.replace(",", "").replace("원", ""))
+    # '30,000' -> 30000
+    return int(price.replace(",", ""))
 
 
 def distance_to_int(distance):
@@ -233,9 +233,9 @@ def get_expert(request, type):
     # 이름
     petsitter_info["name"] = samples.expert[type]["name"]
     # 강아지 가격
-    petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
-    petsitter_info["middle_dog_cost"] = samples.expert[type]["middle_dog_cost"]
-    petsitter_info["large_dog_cost"] = samples.expert[type]["large_dog_cost"]
+    petsitter_info["small_dog_cost"] = list(map(price_to_int, samples.expert[type]["small_dog_cost"]))
+    petsitter_info["middle_dog_cost"] = list(map(price_to_int, samples.expert[type]["middle_dog_cost"]))
+    petsitter_info["large_dog_cost"] = list(map(price_to_int, samples.expert[type]["large_dog_cost"]))
     # title
     petsitter_info["title"] = samples.expert[type]["title"]
     # content
@@ -263,9 +263,9 @@ def get_non_expert(request, type):
     # 이름
     petsitter_info["name"] = samples.non_expert[type]["name"]
     # 강아지 가격
-    petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
-    petsitter_info["middle_dog_cost"] = samples.expert[type]["middle_dog_cost"]
-    petsitter_info["large_dog_cost"] = samples.expert[type]["large_dog_cost"]
+    petsitter_info["small_dog_cost"] = list(map(price_to_int, samples.expert[type]["small_dog_cost"]))
+    petsitter_info["middle_dog_cost"] = list(map(price_to_int, samples.expert[type]["middle_dog_cost"]))
+    petsitter_info["large_dog_cost"] = list(map(price_to_int, samples.expert[type]["large_dog_cost"]))
     # title
     petsitter_info["title"] = samples.non_expert[type]["title"]
     # content
