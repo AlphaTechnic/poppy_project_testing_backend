@@ -5,6 +5,7 @@ from json import dumps
 from haversine import haversine
 from django.shortcuts import HttpResponse
 from . import samples
+import random
 
 
 def price_to_int(price):
@@ -114,7 +115,13 @@ def get_experts(request):
 
     info = dict()
     petsitters = []
-    type = round(nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터와의 거리로 생성한 random number
+
+    # 첫번째 펫시터와의 거리로 생성한 random number
+    s = round(nearest5_experts[0][0])
+    random.seed(s)
+    ran_arr = [0, 1, 2, 3, 4]
+    ran_arr = random.sample(ran_arr, 5)
+    i = 0
 
     for i, petsitter in enumerate(nearest5_experts):
         petsitter_info = dict()
@@ -133,7 +140,8 @@ def get_experts(request):
             petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
 
         # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
-        type = (type + 1) % 5
+        type = ran_arr[i]
+        i += 1
         petsitter_info["type"] = type
 
         # title
@@ -175,15 +183,21 @@ def get_non_experts(request):
         new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
         if expert_or_not == -1:
             non_expert_list.append(new_querySet)
-            non_nearest5_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
+            nearest5_non_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
         else:
             continue
 
     info = dict()
     petsitters = []
-    type = round(non_nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터와의 거리로 생성한 random number
 
-    for i, petsitter in enumerate(non_nearest5_experts):
+    # 첫번째 펫시터의 경도로 생성한 random number
+    s = round(nearest5_non_experts[0][0]*10000)
+    random.seed(s)
+    ran_arr = [0, 1, 2, 3, 4]
+    ran_arr = random.sample(ran_arr, 5)
+    i = 0
+
+    for i, petsitter in enumerate(nearest5_non_experts):
         petsitter_info = dict()
         # petsitter[4] : 전문가 여부
         petsitter_info["expert_or_not"] = 0
@@ -200,7 +214,8 @@ def get_non_experts(request):
             petsitter_info["distance"] = str(round(petsitter[3])) + 'km'
 
         # petsitter[5] : 5가지 유형 중 어떤 petsitter인가
-        type = (type + 1) % 5
+        type = ran_arr[i]
+        i += 1
         petsitter_info["type"] = type
 
         # title
