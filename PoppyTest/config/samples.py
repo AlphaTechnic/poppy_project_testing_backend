@@ -510,7 +510,3 @@ non_expert5["score"] = {"score": 4.6, "num": 11}
 
 expert = [expert1, expert2, expert3, expert4, expert5]
 non_expert = [non_expert1, non_expert2, non_expert3, non_expert4, non_expert5]
-
-
-
-

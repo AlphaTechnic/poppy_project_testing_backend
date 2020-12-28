@@ -114,7 +114,7 @@ def get_experts(request):
 
     info = dict()
     petsitters = []
-    type = round(nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터의 거리로 생성한 random number
+    type = round(nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터와의 거리로 생성한 random number
 
     for i, petsitter in enumerate(nearest5_experts):
         petsitter_info = dict()
@@ -181,7 +181,7 @@ def get_non_experts(request):
 
     info = dict()
     petsitters = []
-    type = round(non_nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터의 거리로 생성한 random number
+    type = round(non_nearest5_experts[0][3] * 1000) % 5   # 첫번째 펫시터와의 거리로 생성한 random number
 
     for i, petsitter in enumerate(non_nearest5_experts):
         petsitter_info = dict()
@@ -232,6 +232,10 @@ def get_expert(request, type):
     petsitter_info["room_img"] = samples.expert[type]["room_img"]
     # 이름
     petsitter_info["name"] = samples.expert[type]["name"]
+    # 강아지 가격
+    petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
+    petsitter_info["middle_dog_cost"] = samples.expert[type]["middle_dog_cost"]
+    petsitter_info["large_dog_cost"] = samples.expert[type]["large_dog_cost"]
     # title
     petsitter_info["title"] = samples.expert[type]["title"]
     # content
@@ -258,6 +262,10 @@ def get_non_expert(request, type):
     petsitter_info["room_img"] = samples.non_expert[type]["room_img"]
     # 이름
     petsitter_info["name"] = samples.non_expert[type]["name"]
+    # 강아지 가격
+    petsitter_info["small_dog_cost"] = samples.expert[type]["small_dog_cost"]
+    petsitter_info["middle_dog_cost"] = samples.expert[type]["middle_dog_cost"]
+    petsitter_info["large_dog_cost"] = samples.expert[type]["large_dog_cost"]
     # title
     petsitter_info["title"] = samples.non_expert[type]["title"]
     # content
