@@ -247,6 +247,8 @@ def get_expert(request, type):
     petsitter_info["room_img"] = samples.expert[type]["room_img"]
     # 이름
     petsitter_info["name"] = samples.expert[type]["name"]
+    # 프로필 사진
+    petsitter_info["profile_img"] = samples.expert[type]["profile_img"]
     # 강아지 가격
     petsitter_info["small_dog_cost"] = list(map(price_to_int, samples.expert[type]["small_dog_cost"]))
     petsitter_info["middle_dog_cost"] = list(map(price_to_int, samples.expert[type]["middle_dog_cost"]))
@@ -277,6 +279,8 @@ def get_non_expert(request, type):
     petsitter_info["room_img"] = samples.non_expert[type]["room_img"]
     # 이름
     petsitter_info["name"] = samples.non_expert[type]["name"]
+    # 프로필 사진
+    petsitter_info["profile_img"] = samples.non_expert[type]["profile_img"]
     # 강아지 가격
     petsitter_info["small_dog_cost"] = list(map(price_to_int, samples.expert[type]["small_dog_cost"]))
     petsitter_info["middle_dog_cost"] = list(map(price_to_int, samples.expert[type]["middle_dog_cost"]))
