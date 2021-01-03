@@ -298,7 +298,7 @@ expert5["score"] = {"score": 4.5, "num": 16}
 #############################
 non_expert1 = dict()
 non_expert1["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_nonexpert1.png?raw=true "
+                        "/room_neighbor1.png?raw=true "
 non_expert1["name"] = "김다영"
 non_expert1["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                          "/non_expert1.png?raw=true "
@@ -321,7 +321,7 @@ non_expert1["content"] = """
 """
 
 non_expert1_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_nonexpert1.png?raw=true "
+                   "/dog_neighbor1.png?raw=true "
 non_expert1["puppy"] = [
     {
         "img": non_expert1_puppy1,
@@ -343,7 +343,7 @@ non_expert1["score"] = {"score": 4.6, "num": 15}
 
 non_expert2 = dict()
 non_expert2["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_nonexpert2.png?raw=true "
+                        "/room_neighbor2.png?raw=true "
 non_expert2["name"] = "이나은"
 non_expert2["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                          "/non_expert2.png?raw=true "
@@ -363,7 +363,7 @@ non_expert2["content"] = """
 """
 
 non_expert2_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_nonexpert2.png?raw=true "
+                   "/dog_neighbor2.png?raw=true "
 non_expert2["puppy"] = [
     {
         "img": non_expert2_puppy1,
@@ -385,7 +385,7 @@ non_expert2["score"] = {"score": 4.6, "num": 19}
 
 non_expert3 = dict()
 non_expert3["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_nonexpert3.png?raw=true "
+                        "/room_neighbor3.png?raw=true "
 non_expert3["name"] = "김지훈"
 non_expert3["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                          "/non_expert3.png?raw=true "
@@ -409,9 +409,9 @@ non_expert3["content"] = """
 """
 
 non_expert3_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_nonexpert3.png?raw=true "
+                   "/dog_neighbor3.png?raw=true "
 non_expert3_puppy2 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_nonexpert3%20(2).png?raw=true "
+                   "/dog_neighbor3%20(2).png?raw=true "
 non_expert3["puppy"] = [
     {
         "img": non_expert3_puppy1,
@@ -440,7 +440,7 @@ non_expert3["score"] = {"score": 4.8, "num": 11}
 
 non_expert4 = dict()
 non_expert4["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_nonexpert4.png?raw=true "
+                        "/room_neighbor4.png?raw=true "
 non_expert4["name"] = "신나미"
 non_expert4["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                          "/non_expert4.png?raw=true "
@@ -464,7 +464,7 @@ non_expert4["content"] = """
 """
 
 non_expert4_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_nonexpert4.png?raw=true "
+                   "/dog_neighbor4.png?raw=true "
 non_expert4["puppy"] = [
     {
         "img": non_expert4_puppy1,
@@ -486,7 +486,7 @@ non_expert4["score"] = {"score": 4.7, "num": 21}
 
 non_expert5 = dict()
 non_expert5["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                       "/room_nonexpert5.png?raw=true "
+                       "/room_neighbor5.png?raw=true "
 non_expert5["name"] = "한서진"
 non_expert5["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                          "/non_expert5.png?raw=true "
@@ -509,7 +509,7 @@ non_expert5["content"] = """
 """
 
 non_expert5_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_nonexpert5.png?raw=true "
+                   "/dog_neighbor5.png?raw=true "
 non_expert5["puppy"] = [
     {
         "img": non_expert5_puppy1,
