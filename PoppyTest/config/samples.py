@@ -2,7 +2,8 @@ expert1 = dict()
 expert1["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                       "/room_expert1.png?raw=true "
 expert1["name"] = "김명순"
-# expert1["profile_img"] = ""
+expert1["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/expert1.png?raw=true "
 expert1["small_dog_cost"] = ['40,000', '45,000']
 expert1["middle_dog_cost"] = ['45,000', '50,000']
 expert1["large_dog_cost"] = ['50,000', '55,000']
@@ -69,6 +70,8 @@ expert2 = dict()
 expert2["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                       "/room_expert2.png?raw=true "
 expert2["name"] = "강하니"
+expert2["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/expert2.png?raw=true "
 expert2["small_dog_cost"] = ['40,000', '50,000']
 expert2["middle_dog_cost"] = ['45,000', '50,000']
 expert2["large_dog_cost"] = ['50,000', '55,000']
@@ -125,6 +128,8 @@ expert3 = dict()
 expert3["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                       "/room_expert3.png?raw=true "
 expert3["name"] = "고아름"
+expert3["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/expert3.png?raw=true "
 expert3["small_dog_cost"] = ['40,000', '45,000']
 expert3["middle_dog_cost"] = ['45,000', '50,000']
 expert3["large_dog_cost"] = ['50,000', '55,000']
@@ -179,6 +184,8 @@ expert4 = dict()
 expert4["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                       "/room_expert4.png?raw=true "
 expert4["name"] = "이순정"
+expert4["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/expert4.png?raw=true "
 expert4["small_dog_cost"] = ['30,000', '40,000']
 expert4["middle_dog_cost"] = ['45,000', '50,000']
 expert4["large_dog_cost"] = ['50,000', '55,000']
@@ -229,6 +236,8 @@ expert5 = dict()
 expert5["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                       "/room_expert5.png?raw=true "
 expert5["name"] = "이현숙"
+expert5["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/expert5.png?raw=true "
 expert5["small_dog_cost"] = ['30,000', '35,000']
 expert5["middle_dog_cost"] = ['35,000', '40,000']
 expert5["large_dog_cost"] = ['40,000', '45,000']
@@ -289,8 +298,10 @@ expert5["score"] = {"score": 4.5, "num": 16}
 #############################
 non_expert1 = dict()
 non_expert1["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_neighbor1.png?raw=true "
+                        "/room_nonexpert1.png?raw=true "
 non_expert1["name"] = "김다영"
+non_expert1["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/non_expert1.png?raw=true "
 non_expert1["small_dog_cost"] = ['20,000', '30,000']
 non_expert1["middle_dog_cost"] = ['25,000', '35,000']
 non_expert1["large_dog_cost"] = ['30,000', '40,000']
@@ -310,7 +321,7 @@ non_expert1["content"] = """
 """
 
 non_expert1_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_neighbor1.png?raw=true "
+                   "/dog_nonexpert1.png?raw=true "
 non_expert1["puppy"] = [
     {
         "img": non_expert1_puppy1,
@@ -332,8 +343,10 @@ non_expert1["score"] = {"score": 4.6, "num": 15}
 
 non_expert2 = dict()
 non_expert2["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_neighbor2.png?raw=true "
+                        "/room_nonexpert2.png?raw=true "
 non_expert2["name"] = "이나은"
+non_expert2["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/non_expert2.png?raw=true "
 non_expert2["small_dog_cost"] = ['20,000', '25,000']
 non_expert2["middle_dog_cost"] = ['25,000', '30,000']
 non_expert2["large_dog_cost"] = ['30,000', '35,000']
@@ -350,7 +363,7 @@ non_expert2["content"] = """
 """
 
 non_expert2_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_neighbor2.png?raw=true "
+                   "/dog_nonexpert2.png?raw=true "
 non_expert2["puppy"] = [
     {
         "img": non_expert2_puppy1,
@@ -372,8 +385,10 @@ non_expert2["score"] = {"score": 4.6, "num": 19}
 
 non_expert3 = dict()
 non_expert3["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_neighbor3.png?raw=true "
+                        "/room_nonexpert3.png?raw=true "
 non_expert3["name"] = "김지훈"
+non_expert3["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/non_expert3.png?raw=true "
 non_expert3["small_dog_cost"] = ['15,000', '20,000']
 non_expert3["middle_dog_cost"] = ['20,000', '25,000']
 non_expert3["large_dog_cost"] = ['25,000', '30,000']
@@ -394,9 +409,9 @@ non_expert3["content"] = """
 """
 
 non_expert3_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_neighbor3.png?raw=true "
+                   "/dog_nonexpert3.png?raw=true "
 non_expert3_puppy2 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_neighbor3%20(2).png?raw=true "
+                   "/dog_nonexpert3%20(2).png?raw=true "
 non_expert3["puppy"] = [
     {
         "img": non_expert3_puppy1,
@@ -425,8 +440,10 @@ non_expert3["score"] = {"score": 4.8, "num": 11}
 
 non_expert4 = dict()
 non_expert4["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                        "/room_neighbor4.png?raw=true "
+                        "/room_nonexpert4.png?raw=true "
 non_expert4["name"] = "신나미"
+non_expert4["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/non_expert4.png?raw=true "
 non_expert4["small_dog_cost"] = ['10,000', '20,000']
 non_expert4["middle_dog_cost"] = ['15,000', '25,000']
 non_expert4["large_dog_cost"] = ['20,000', '30,000']
@@ -447,7 +464,7 @@ non_expert4["content"] = """
 """
 
 non_expert4_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_neighbor4.png?raw=true "
+                   "/dog_nonexpert4.png?raw=true "
 non_expert4["puppy"] = [
     {
         "img": non_expert4_puppy1,
@@ -469,8 +486,10 @@ non_expert4["score"] = {"score": 4.7, "num": 21}
 
 non_expert5 = dict()
 non_expert5["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                       "/room_neighbor5.png?raw=true "
+                       "/room_nonexpert5.png?raw=true "
 non_expert5["name"] = "한서진"
+non_expert5["profile_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
+                         "/non_expert5.png?raw=true "
 non_expert5["small_dog_cost"] = ['10,000', '15,000']
 non_expert5["middle_dog_cost"] = ['15,000', '20,000']
 non_expert5["large_dog_cost"] = ['20,000', '25,000']
@@ -490,7 +509,7 @@ non_expert5["content"] = """
 """
 
 non_expert5_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
-                   "/dog_expert5.png?raw=true "
+                   "/dog_nonexpert5.png?raw=true "
 non_expert5["puppy"] = [
     {
         "img": non_expert5_puppy1,
