@@ -2,6 +2,7 @@ expert1 = dict()
 expert1["room_img"] = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
                       "/room_expert1.png?raw=true "
 expert1["name"] = "김명순"
+# expert1["profile_img"] = ""
 expert1["small_dog_cost"] = ['40,000', '45,000']
 expert1["middle_dog_cost"] = ['45,000', '50,000']
 expert1["large_dog_cost"] = ['50,000', '55,000']
