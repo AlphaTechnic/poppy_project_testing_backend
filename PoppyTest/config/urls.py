@@ -19,9 +19,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('expert/', views.get_experts, name='close_experts'),
-    path('non_expert/', views.get_non_experts, name='close_non_experts'),
-    path('expert/<int:type>/', views.get_expert, name="expert_detail"),
-    path('non_expert/<int:type>', views.get_non_expert, name='non_expert_detail'),
+    path('expert/', views.get_experts_nearby, name='close_experts'),
+    path('non_expert/', views.get_non_experts_nearby, name='close_non_experts'),
+    path('expert/<int:type>/', views.get_particular_expert, name="expert_detail"),
+    path('non_expert/<int:type>', views.get_particular_non_expert, name='non_expert_detail'),
 
 ]

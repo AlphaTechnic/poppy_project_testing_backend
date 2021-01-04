@@ -39,8 +39,8 @@ def get_lat_lng(address):
     return result
 
 
-def getAddress():
-    expert_or_not = -1
+def make_non_expert_address():
+    expert_or_not = 0
     coordinate_start = 126.751286, 37.419093
     coordinate_end = 127.196322, 37.707367
 
@@ -71,12 +71,21 @@ def getAddress():
             ## 엑셀에 기록
             write_ws.append([x, y, result_address, expert_or_not])
 
+    write_wb.save('non_expert_address.xlsx')
+
+    print("비전문가들 주소 생성 완료")
+
+
+def make_expert_address():
     expert_or_not = 1
     coordinate_start = 126.751286, 37.419093
     coordinate_end = 127.196322, 37.707367
 
-    xvals = np.arange(coordinate_start[0], coordinate_end[0], step=0.02)
-    yvals = np.arange(coordinate_start[1], coordinate_end[1], step=0.02)
+    xvals = np.arange(coordinate_start[0], coordinate_end[0], step=0.08)
+    yvals = np.arange(coordinate_start[1], coordinate_end[1], step=0.08)
+
+    write_wb = openpyxl.Workbook()
+    write_ws = write_wb.active
 
     for x in xvals:
         for y in yvals:
@@ -98,10 +107,8 @@ def getAddress():
 
             ## 엑셀에 기록
             write_ws.append([x, y, result_address, expert_or_not])
-
-    write_wb.save('address.xlsx')
-
-    print("서울시 주소 저장 완료")
+    write_wb.save('expert_address.xlsx')
+    print("전문가들 주소 생성 완료")
 
 
 def get_distance(coordinate1, coordinate2):
@@ -110,14 +117,14 @@ def get_distance(coordinate1, coordinate2):
     return distance
 
 
-def get_experts(request):
+def get_experts_nearby(request):
     order_by = request.GET.get('order_by')
 
     address = request.GET.get('address')
     coordinate1 = get_lat_lng(address)
 
     # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
-    load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
+    load_wb = openpyxl.load_workbook("expert_address.xlsx", data_only=True)
     load_ws = load_wb['Sheet']
 
     expert_list = []
@@ -129,11 +136,10 @@ def get_experts(request):
 
         coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
         new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
-        if expert_or_not == 1:
-            expert_list.append(new_querySet)
-            nearest5_experts = sorted(expert_list, key=lambda x: x[3])[:5]
-        else:
-            continue
+
+        expert_list.append(new_querySet)
+
+    nearest5_experts = sorted(expert_list, key=lambda x: x[3])[:5]
 
     info = dict()
     petsitters = []
@@ -185,13 +191,13 @@ def get_experts(request):
     return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
 
 
-def get_non_experts(request):
+def get_non_experts_nearby(request):
     order_by = request.GET.get('order_by')
     address = request.GET.get('address')
     coordinate1 = get_lat_lng(address)
 
     # data_only=True로 해줘야 수식이 아닌 값으로 받아온다.
-    load_wb = openpyxl.load_workbook("address.xlsx", data_only=True)
+    load_wb = openpyxl.load_workbook("non_expert_address.xlsx", data_only=True)
     load_ws = load_wb['Sheet']
 
     non_expert_list = []
@@ -203,11 +209,10 @@ def get_non_experts(request):
 
         coordinate2 = x2, y2  # 펫시터 사는 곳 좌표
         new_querySet = x2, y2, address, get_distance(coordinate1, coordinate2), expert_or_not
-        if expert_or_not == -1:
-            non_expert_list.append(new_querySet)
-            nearest5_non_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
-        else:
-            continue
+
+        non_expert_list.append(new_querySet)
+
+    nearest5_non_experts = sorted(non_expert_list, key=lambda x: x[3])[:5]
 
     info = dict()
     petsitters = []
@@ -259,7 +264,7 @@ def get_non_experts(request):
     return HttpResponse(dumps(info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
 
 
-def get_expert(request, type):
+def get_particular_expert(request, type):
     petsitter_info = dict()
 
     # petsitter[4] : 전문가 여부
@@ -291,7 +296,7 @@ def get_expert(request, type):
     return HttpResponse(dumps(petsitter_info, ensure_ascii=False), content_type=u"application/json; charset=utf-8")
 
 
-def get_non_expert(request, type):
+def get_particular_non_expert(request, type):
     petsitter_info = dict()
 
     # petsitter[4] : 전문가 여부
