@@ -304,15 +304,15 @@ def get_non_expert(request, type):
     # 프로필 사진
     petsitter_info["profile_img"] = samples.non_expert[type]["profile_img"]
     # 강아지 가격
-    petsitter_info["small_dog_cost"] = list(map(price_to_int, samples.expert[type]["small_dog_cost"]))
-    petsitter_info["middle_dog_cost"] = list(map(price_to_int, samples.expert[type]["middle_dog_cost"]))
-    petsitter_info["large_dog_cost"] = list(map(price_to_int, samples.expert[type]["large_dog_cost"]))
+    petsitter_info["small_dog_cost"] = list(map(price_to_int, samples.non_expert[type]["small_dog_cost"]))
+    petsitter_info["middle_dog_cost"] = list(map(price_to_int, samples.non_expert[type]["middle_dog_cost"]))
+    petsitter_info["large_dog_cost"] = list(map(price_to_int, samples.non_expert[type]["large_dog_cost"]))
     # title
     petsitter_info["title"] = samples.non_expert[type]["title"]
     # content
     petsitter_info["content"] = samples.non_expert[type]["content"]
     # 강아지 정보
-    petsitter_info["puppy"] = samples.expert[type]["puppy"]
+    petsitter_info["puppy"] = samples.non_expert[type]["puppy"]
     # 댓글
     petsitter_info["comment"] = samples.non_expert[type]["comment"]
     # 평점
