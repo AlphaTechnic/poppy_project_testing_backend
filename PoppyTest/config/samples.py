@@ -38,14 +38,14 @@ expert1["puppy"] = [
         "img": expert1_poppy1,
         "name": "또리", "breed":
         "말티즈", "age": "7살",
-        "character": "정말 온순해요:)"
+        "character": "활발하고 강아지들과 잘 어울려요"
     },
     {
         "img": expert1_poppy2,
         "name": "뽀리",
         "breed": "말티즈",
         "age": "7살",
-        "character": "활발하고 강아지들과 잘 어울려요"
+        "character": "정말 온순해요:)"
     }
 ]
 expert1["comment"] = {
@@ -104,7 +104,7 @@ expert2["puppy"] = [
         "name": "비즈",
         "breed": "푸들",
         "age": "5살",
-        "character": "정말 온순해요:)"
+        "character": "낯을 가리지만 금방 친해져요!"
     },
 ]
 expert2["comment"] = {
@@ -117,7 +117,7 @@ expert2["comment"] = {
 expert2["certification"] = [
     {
         "name": "반려동물관리사 1급",
-        "acquisition_date": "2016. 9. 27"
+        "acquisition_date": "2018. 7. 8"
     }
 ]
 
@@ -156,14 +156,13 @@ expert3["puppy"] = [
         "name": "구름",
         "breed": "닥스훈트",
         "age": "12살",
-        "character": "나이 때문인지 느긋하고 온순해요~ 다른 강아지들과 잘 어울려요ㅎㅎ"
+        "character": "나이 때문인지 느긋하고 온순해요~"
     },
 ]
 expert3["comment"] = {
     "name": "홍*현",
     "content":
-        """친절한 펫시터님♡ 덕분에 안심하고 여행 잘 다녀왔습니당 물어보지 않아도 사진이랑 오늘 하루 어떻게 지냈는지 얘기해주셔서 너무 좋았어요!
-        구름이랑 얼굴도 닮고 이름마저 똑같은 친구 그리고 펫시터님 가족분들과 너무너무 즐거운 시간 보내고 온 것 같아 강아지에게 덜 미안할 수 있네요ㅜㅜㅎㅎ 다음에 또 연락드릴게요~^^*""",
+        """친절한 펫시터님♡ 덕분에 안심하고 여행 잘 다녀왔습니당 물어보지 않아도 사진이랑 오늘 하루 어떻게 지냈는지 얘기해주셔서 너무 좋았어요!""",
     "date": "2020-11-15"
 }
 
@@ -213,7 +212,7 @@ expert4["puppy"] = [
         "name": "비즈",
         "breed": "포메라니안",
         "age": "3살",
-        "character": "호기심이 많고 상아지들을 좋아해요~"
+        "character": "호기심이 많고 강아지들을 좋아해요~"
     },
 ]
 expert4["comment"] = {
@@ -270,7 +269,7 @@ expert5["puppy"] = [
         "name": "공주",
         "breed": "치와와",
         "age": "5살",
-        "character": "수줍음을 많이 타요^^ 훈련이 아주 잘 되어있어서 먼저 공격하지 않아요"
+        "character": "수줍음을 많이 타요^^"
     },
 ]
 expert5["comment"] = {
@@ -287,7 +286,7 @@ expert5["certification"] = [
         "acquisition_date": "2015. 4. 22"
     },
     {
-        "name": "반려동물관리사 1급",
+        "name": "반려동물행동교정사 1급",
         "acquisition_date": "2018. 6. 30"
     },
 ]

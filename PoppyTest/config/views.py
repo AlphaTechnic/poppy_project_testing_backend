@@ -39,19 +39,17 @@ def get_lat_lng(address):
     return result
 
 
-def get_address():
+def getAddress():
+    expert_or_not = -1
     coordinate_start = 126.751286, 37.419093
     coordinate_end = 127.196322, 37.707367
-    #0.008
-    xvals = np.arange(coordinate_start[0], coordinate_end[0], step=0.008)
-    yvals = np.arange(coordinate_start[1], coordinate_end[1], step=0.008)
+
+    xvals = np.arange(coordinate_start[0], coordinate_end[0], step=0.009)
+    yvals = np.arange(coordinate_start[1], coordinate_end[1], step=0.009)
 
     write_wb = openpyxl.Workbook()
     write_ws = write_wb.active
 
-    expert_or_not = 1
-    even_flag = 0
-    numbering = 0
     for x in xvals:
         for y in yvals:
             result_address = ""
@@ -70,13 +68,37 @@ def get_address():
             if result_address[0:2] != '서울':
                 continue
 
-            expert_or_not *= (-1)
-            if even_flag == 2:
-                numbering = (numbering + 1) % 5
-                even_flag = 0
-            even_flag += 1
             ## 엑셀에 기록
-            write_ws.append([x, y, result_address, expert_or_not, numbering])
+            write_ws.append([x, y, result_address, expert_or_not])
+
+    expert_or_not = 1
+    coordinate_start = 126.751286, 37.419093
+    coordinate_end = 127.196322, 37.707367
+
+    xvals = np.arange(coordinate_start[0], coordinate_end[0], step=0.02)
+    yvals = np.arange(coordinate_start[1], coordinate_end[1], step=0.02)
+
+    for x in xvals:
+        for y in yvals:
+            result_address = ""
+
+            url = 'https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x={}&y={}'.format(x, y)
+            rest_api_key = '7d66b3ade18db0422c2f27baada16e45'
+            header = {'Authorization': 'KakaoAK ' + rest_api_key}
+
+            r = requests.get(url, headers=header)
+
+            if r.status_code == 200:
+                result_address = r.json()["documents"][0]["address_name"]
+            else:
+                result_address = "ERROR[" + str(r.status_code) + "]"
+
+            if result_address[0:2] != '서울':
+                continue
+
+            ## 엑셀에 기록
+            write_ws.append([x, y, result_address, expert_or_not])
+
     write_wb.save('address.xlsx')
 
     print("서울시 주소 저장 완료")
