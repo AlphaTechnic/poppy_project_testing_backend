@@ -358,7 +358,7 @@ non_expert2["content"] = """
 지금까지 여러 강아지들을 보살폈을 때도 사고 경험이 없습니다.
 
 현재 당산쪽에서 살고있고, 당일 및 기간으로 모두 케어가 가능하니 언제든지 예약해주세요~
-문의 사항 있으시면 010-3920-2877로 문자 남겨주시면 바로 답장해드릴게요!
+문의 사항 있으시면, 문자 남겨주시면 바로 답장해드릴게요!
 """
 
 non_expert2_puppy1 = "https://github.com/AlphaTechnic/poppy_project_testing_backend/blob/master/PoppyTest/img" \
